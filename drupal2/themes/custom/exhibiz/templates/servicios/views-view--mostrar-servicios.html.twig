@@ -1,0 +1,20 @@
+
+
+        {% if header %}
+    
+          {{ header }}
+        
+        {% endif %}
+      </div>
+    {% if rows -%}
+      <div class="row" style= "background-color: white;">
+     
+          {{ rows }}
+     </div>     
+       
+    {% elseif empty -%}
+      {{ empty }}
+    {% endif %}
+
+
+

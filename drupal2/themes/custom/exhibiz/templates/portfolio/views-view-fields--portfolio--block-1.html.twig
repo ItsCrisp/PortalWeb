@@ -1,0 +1,15 @@
+{% set images = fields.field_gal_imagenes.content|split(',') %}
+{% for img in images %}
+  <div class="item residential">
+    <div class="picframe">
+      <a href="{{ img }}" title="Ver">
+      <span class="overlay">
+         <span class="pf_text">
+           <span class="project-name">Ver</span>
+         </span>
+      </span>
+        <img src="{{ img }}" alt=""/>
+      </a>
+    </div>
+  </div>
+{% endfor %}

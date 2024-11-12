@@ -1,0 +1,17 @@
+<div class="col-12">
+  {#<div class="pricing-s1 mb30 wow fadeInUp">
+    <div class="top">
+      <h2 id="title-tickets-h2">{{ fields.title.content }}</h2>
+      <p class="price"><span class="currency id-color">$</span> <b>{{ fields.field_inv_precio.content }}</b></p>
+    </div>
+    {% if fields.field_inv_item.content %}
+    <div class="bottom">
+      <ul>
+        <li><i class="icon_check_alt2"></i>{{ fields.field_inv_item.content }}</li>
+      </ul>
+    </div>
+    {% endif %}
+    <div class="ps1-deco"></div>
+  </div>#}
+  {{ fields.body.content }}
+</div>

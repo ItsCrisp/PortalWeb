@@ -1,0 +1,21 @@
+{{ attach_library('exhibiz/magnify') }}
+<div class="col-md-12 wow fadeInUp text-center lead">
+  {{ fields.body.content }}
+</div>
+
+
+<img  src="{{ fields.field_cau_imagen.content }}" alt="{{ fields.title.content }}" class="zoom w-100 d-sm-none d-block" data-magnify-src="{{ fields.field_cau_imagen.content }}">
+
+
+<div class="d-sm-block d-none"  style="width: 99.58vw; position: relative; left: 50%; right: 50%; margin-left: -50.2vw; margin-right: 0; display: block;">
+  <img  src="{{ fields.field_cau_imagen.content }}" alt="{{ fields.title.content }}" class="w-100 ">
+</div>
+<div class="col-md-12 wow fadeInUp text-center d-sm-none d-block mt-4">
+  <label>Mantener pulsado o toca para ampliar</label>
+</div>
+
+{#
+<a href="{{ fields.field_cau_imagen.content }}">
+  <img src="{{ fields.field_cau_imagen.content }}" class="zoom">
+</a>
+#}

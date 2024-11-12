@@ -1,0 +1,56 @@
+<?php
+use Drupal\Core\Url;
+use Drupal\Component\Utility\UrlHelper;
+
+
+function exhibiz_preprocess_page(&$variables) {
+  $site_config = \Drupal::config('system.site');
+  $variables['site_name'] = $site_config->get('name');
+  $variables['site_slogan'] = $site_config->get('slogan');
+
+  // logo needs to be placed within specified folder
+  $variables['site_logo'] =  \Drupal::service('file_url_generator')->generateAbsoluteString(theme_get_setting('logo.url'));
+
+  $form = Drupal::formBuilder()->getForm(Drupal\user\Form\UserLoginForm::class) ;
+  $render = Drupal::service('renderer');
+  $variables['login_form'] = $render->renderPlain($form);
+
+  try {
+    $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+  }
+  catch (Exception $e) {
+    $variables['is_front'] = FALSE;
+  }
+
+}
+
+
+function exhibiz_preprocess_block(&$variables) {
+  $variables['site_logo'] =  \Drupal::service('file_url_generator')->generateAbsoluteString(theme_get_setting('logo.url'));
+
+  try {
+    $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+  }
+  catch (Exception $e) {
+    $variables['is_front'] = FALSE;
+  }
+}
+
+function exhibiz_page_attachments_alter(array &$page) {
+  $host = \Drupal::request()->getSchemeAndHttpHost();
+  $current_path = \Drupal::service('path.current')->getPath();
+  $current_uri = \Drupal::request()->getRequestUri();
+  $url = $host.$current_uri;
+
+  $viewport = array(
+    '#type' => 'html_tag',
+    '#tag' => 'link',
+    '#attributes' => array(
+      'rel' => 'alternate',
+      'hreflang' => 'x-default',
+      'href' => $url,
+    ),
+  );
+  $page['#attached']['html_head'][] = [$viewport, 'rel'];
+}
+?>

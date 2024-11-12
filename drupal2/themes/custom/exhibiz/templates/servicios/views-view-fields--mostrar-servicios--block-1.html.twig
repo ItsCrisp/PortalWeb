@@ -1,0 +1,13 @@
+{% set nid_actual = fields.nid.content|render|striptags|trim %} {# Esto extrae solo el número del NID #}
+
+<div class="col-lg-4">
+    {{ fields.title.content }}
+    {{ fields.body.content }}
+    {{ fields.field_imagen_servicio.content }}
+
+    <div>
+        <p>NID actual: {{ nid_actual }}</p>
+        {# Asegúrate de que solo estás pasando el valor del NID #}
+        {{ drupal_view('mostrar_subservicios', 'block_1', nid_actual)}}
+    </div>
+</div>

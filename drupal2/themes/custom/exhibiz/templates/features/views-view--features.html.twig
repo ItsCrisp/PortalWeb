@@ -1,0 +1,49 @@
+
+<!-- Features section Start -->
+<section id="section-features">
+  <div id="features-subt" class="wm wm-border light wow fadeInDown "></div>
+  <div class="container">
+    {% set classes = [
+      dom_id ? 'js-view-dom-id-' ~ dom_id,
+    ] %}
+
+    {{ title_prefix }}
+    {{ title }}
+    {{ title_suffix }}
+
+    <!-- Start Row -->
+    <div class="row">
+      <div class="col-md-6 offset-md-3 text-center wow fadeInUp">
+        <h2>{{ header }}</h2>
+        <div class="separator"><span><i class="fa fa-square"></i></span></div>
+        <div class="spacer-single"></div>
+      </div>
+    </div>
+    <!-- End Row -->
+
+    {{ exposed }}
+    {{ attachment_before }}
+
+    {% if rows -%}
+      <div class="row">
+        {{ rows }}
+      </div>
+    {% elseif empty -%}
+      {{ empty }}
+    {% endif %}
+    {{ pager }}
+
+    {{ attachment_after }}
+    {{ more }}
+
+    {% if footer %}
+      <footer>
+        {{ footer }}
+      </footer>
+    {% endif %}
+
+    {{ feed_icons }}
+
+    <!-- /.Features section end -->
+  </div>
+</section>

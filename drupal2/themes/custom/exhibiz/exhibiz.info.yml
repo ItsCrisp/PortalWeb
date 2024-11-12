@@ -1,0 +1,38 @@
+name: Exhibiz - Creative Design Expo 2023
+type: theme
+base theme: false
+description: 'Exhibiz - Event Conference Website Template HTML5 Compatible con Drupal 8, 9 y 10'
+package: Core
+core_version_requirement: ^8 || ^9 || ^10
+# version: VERSION
+# core: 8.x
+logo: assets/images/logo/uazuay-logo-white.webp
+favicon: assets/images/favicon-32x32.png
+screenshot: assets/images/screenshotuazuay.png
+libraries:
+  - exhibiz/global-styling-and-scripts
+ckeditor_stylesheets:
+  - css/base/elements.css
+  - css/components/captions.css
+  - css/components/table.css
+  - css/components/text-formatted.css
+  - css/a-stylesheet.css
+ckeditor5-stylesheets:
+  - css/a-stylesheet.css
+regions:
+  header: Header
+  header_top: 'Header top'
+  header_top_enlace: 'Header top enlace'
+  primary_menu: 'Menu principal'
+  secondary_menu : 'Menu secundario'
+  breadcrumb: Breadcrumb
+  highlighted : Highlighted
+  help: Help
+  content: Content
+  content_front_page: 'Contenido solo para página inicio'
+  footer: Footer
+
+# Information added by Drupal.org packaging script on 2019-08-07.
+version: '2.0.0'
+core: '8.x'
+

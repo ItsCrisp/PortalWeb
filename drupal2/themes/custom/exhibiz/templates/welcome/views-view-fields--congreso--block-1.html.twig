@@ -1,0 +1,65 @@
+<section id="section-about" data-bgimage="url(/themes/exhibiz/assets/images/bg/4.jpg) top left no-repeat">
+  <div class="wm wm-border light wow fadeInDown">{{ fields.field_con_subtitulo.content }}</div>
+  <div class="container">
+    {# ####  BLOQUE SUPERIOR  #### #}
+    <div class="row align-items-center mt-5">
+      <div
+        {% if fields.field_con_imagenes.content %}class="col-lg-6 wow fadeInLeft lead" {% else %} class="col-lg-12 wow fadeInLeft lead"{% endif %}
+        data-wow-delay="0s">
+        <h2>{{ fields.title.content }}</h2>
+        {{ fields.body.content }}
+        <div class="spacer10"></div>
+      </div>
+
+      {% if fields.field_con_imagenes.content %}
+        <div class="col-lg-6 mb-sm-30 text-center wow fadeInRight">
+          <div class="de-images">
+            {% set images = fields.field_con_imagenes.content|split(',') %}
+            {% for img in images %}
+              {% if loop.index == 1 %}
+                <img src="{{ img }}" class="img-fluid">
+              {% elseif loop.index == 2 %}
+                <img src="{{ img }}" class="di-small wow">
+              {% elseif loop.index == 3 %}
+                <img src="{{ img }}" class="di-small-2 wow">
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+      {% if fields.field_con_video.content %}
+      <div class="col-lg-6 mb-sm-30 text-center wow fadeInRight">
+        <video autoplay muted loop style="width: 100%; background-color: white;">
+          <source src="{{ fields.field_con_video.content }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      {% endif %}
+
+    </div>
+
+    <div class="spacer-double"></div>
+
+    {# ### BLOQUE INFERIOR #### #}
+    {% if fields.field_con_titulo2.content %}
+      <div class="row align-items-center mt-5">
+        <div class="col-lg-12 mb-sm-30 wow fadeInRight">{#<h2>{{ fields.field_con_titulo2.content }}</h2>#}</div>
+        {% if fields.field_con_imagen2.content %}
+        <div class="col-lg-5 mb-sm-30 wow fadeInRight">
+          <h2>{{ fields.field_con_titulo2.content }}</h2>
+          <div class="de-images">
+            <img src="{{ fields.field_con_imagen2.content }}" class="img-fluid">
+            {# <div class="gradient-overlay gradient-overlay-purple"></div> #}
+          </div>
+        </div>
+        {% endif %}
+        <div
+          {% if fields.field_con_imagenes.content %}class="col-lg-7 wow fadeInLeft lead"{% else %}class="col-lg-12 wow fadeInLeft lead"{% endif %}
+          data-wow-delay="0s">
+          {{ fields.field_con_descripcion.content }}
+          <div class="spacer10"></div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</section>

@@ -1,0 +1,33 @@
+<br><br><br>
+   <div class="container mt-5" style="background-color: #aac9fe;">
+    <div class="text-center mt-4">
+        <h2>{{ label }}</h2>
+    </div>
+     
+         {% if content.field_imagen_subservicio is not empty %}        
+    <div class="text-center my-4">
+        <div class="image-container">
+            {{ content.field_imagen_subservicio }}
+        </div>
+    </div>
+           {% endif %}
+     <div class="mt-4">
+         {{ content.body }}
+    </div>
+</div>
+
+<style>
+       .image-container img {
+          max-width: 80%;  /* Ajusta el tamaño de la imagen según lo desees */
+         transition: transform 0.3s;  /* Suaviza la transición */
+      }
+
+    .image-container img:hover {
+         transform: scale(0.9);  /* Achica la imagen al pasar el mouse */
+    }
+    h1
+    {
+        display: none;
+    }
+</style>
+        

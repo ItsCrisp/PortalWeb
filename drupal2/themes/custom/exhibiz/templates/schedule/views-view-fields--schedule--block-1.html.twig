@@ -1,0 +1,22 @@
+{% if fields.counter.content == "1" %}
+<li id="tab-{{ fields.nid.content }}" class="active" data-link="#section-services-tab">
+  {% if field_pro_fecha %}
+  <h3 class="title-prog-day">Día <span>{{ fields.counter.content }}</span></h3>
+  <h4 class="title-prog-date">{{ fields.title.content }}</h4>
+  {% else %}
+    <h3 id="title-tab-{{ fields.nid.content }}" class="title-prog-day2">{{ fields.title.content }} </h3>
+
+  {% endif %}
+  {% else %}
+<li id="tab-{{ fields.nid.content }}" data-link="#section-services-tab" >
+  {% if field_pro_fecha %}
+  <h3>Día <span>{{ fields.counter.content }}</span></h3>
+  <h4>{{ fields.title.content }}</h4>
+  {% else %}
+    <h3 id="title-tab-{{ fields.nid.content }}" class="title-prog-day2">{{ fields.title.content }} </h3>
+  {% endif %}
+  {% endif %}
+</li>
+
+
+

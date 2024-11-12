@@ -1,0 +1,65 @@
+<!-- header begin -->
+<header class="transparent">
+  <div class="info">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="column"> <span class="id-color"><strong></strong></span>
+          </div>
+          <div class="column"> <span class="id-color"><strong></strong></span></div>
+          <!-- social icons -->
+          <div class="column social">
+            <a href="#"><i class="fa fa-facebook"></i></a>  {#revisar#}
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-rss"></i></a>
+            <a href="#"><i class="fa fa-google-plus"></i></a>
+            <a href="#"><i class="fa fa-envelope-o"></i></a>
+          </div>
+          <!-- social icons close -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <!-- logo begin -->
+        <div id="logo">
+          <a href="https://www.uazuay.edu.ec/">
+            <img class="logo" src="{{ site_logo }}" alt="{{ site_slogan }}" width="255" height="69">
+          </a>
+        </div>
+        <!-- logo close -->
+
+        <!--traductor-->
+
+          <ul class=" translate navbar-nav" style="padding-right: 0.2rem; float: right;">
+            <li class="menu-item btn-english" style="display: none;">
+              <a title="Traducir a Inglés" href="javascript:doGTranslate('es|en')" class="link">
+                <p class="bg-white text-dark text-small border rounded pt-0  ml-1 mb-0" style="width: 28px; height: 28px;"> EN </p>
+              </a>
+            </li>
+            <li class="menu-item btn-spanish" >
+              <a title="Traducir a Español" href="javascript:doGTranslate('es|es')" class="link">
+                <p class="bg-white text-dark text-small border rounded pt-0  ml-1 mb-0" style="width: 28px; height: 28px;"> ES </p>
+              </a>
+            </li>
+          </ul>
+
+
+
+        <!-- small button begin -->
+        <span id="menu-btn"></span>
+        <!-- small button close -->
+        {% if page.primary_menu %}
+          {{ page.primary_menu }}
+        {% endif %}
+        <!-- mainmenu close -->
+
+
+
+      </div>
+    </div>
+  </div>
+</header>
+<!-- header close -->

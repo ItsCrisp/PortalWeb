@@ -1,0 +1,50 @@
+<div class="row testing-{{ fields.id.content }}">
+  <div class="col-lg-12">
+    <div class="lead">
+      {% if fields.counter.content == '1' %}
+      {{ fields.body.content }}
+      {% endif %}
+    </div>
+    <div class="col-md-12">
+      <div class="schedule-listing">
+        <div class="schedule-item row align-items-center">
+          <div class="sc-time">{{ fields.field_hora.content }}</div>
+          {#
+          <div class="sc-pic">
+            <img src="/themes/exhibiz/assets/images/team/1.jpg" class="img-circle d-none" alt="{{ fields.field_tema.content }}">
+          </div>
+          #}
+          {% if fields.field_expositores.content %}
+          <div class="sc-name">
+            <h4>{{ fields.field_expositores.content|striptags }}</h4>
+            {% if fields.field_cargo.content %}
+              <span>{{ fields.field_cargo.content|striptags }}</span>
+            {% endif %}
+          </div>
+          {% endif %}
+          <div class="sc-info lead">
+            {% if fields.field_tema.content %}<h3>{{ fields.field_tema.content }}</h3>{% endif %}
+            {% if fields.field_imagen.content %}
+              <div class="row">
+                <div class="col-lg-6">{{ fields.field_detalle.content }}</div>
+                <div class="col-lg-6">
+                  <img class="img-fluid shadow-lg" src="{{ fields.field_imagen.content }}" alt="Curso Avanzando Ultrasonografía POCUS Cardio-Pulmonar Critica">
+                </div>
+              </div>
+            {% else %}
+              {{ fields.field_detalle.content }}
+            {% endif %}
+
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

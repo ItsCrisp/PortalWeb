@@ -1,0 +1,51 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="{{ title|lower }} mt-5 mb-5">
+  <div class="container">
+
+    <div class="row h-100 mt-2" style="justify-content: center">
+
+      {% if title %}
+        <div class="col-lg-12">
+          <h3 class="mt-4 mb-4 h2">{{ title }}</h3>
+        </div>
+      {% endif %}
+      {% for row in rows %}
+        {%
+          set row_classes = [
+          default_row_class ? 'views-row',
+        ]
+        %}
+
+        <div class="col-xl-3 col-lg-4 col-sm-6 mb30 wow fadeInUp animated animated">
+        {{- row.content -}}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+

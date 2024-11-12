@@ -1,0 +1,58 @@
+<!-- banner section -->
+<section id="section-hero" class="full-height text-light"
+  {% if fields.field_ban_imagen.content %}
+    data-bgimage="url({{ fields.field_ban_imagen.content }}) fixed top center" data-stellar-background-ratio=".2" style=" background: url('{{ fields.field_ban_imagen.content }}') 50% 0px / cover fixed !important;"
+  {% endif %}
+>
+  <div id="particles-js"></div>
+  {% if fields.field_ban_video.content %}
+    <video class="bg-image" playsinline autoplay loop muted name="media" style="width: 100%; height: auto;">
+      <source src="{{ fields.field_ban_video.content }}" type="video/mp4">
+    </video>
+    <div class="gradient-overlay gradient-overlay-purple" style="background-size: cover;"></div>
+  {% endif %}
+  {% if fields.field_ban_video.content %}
+  <div class="center-y text-center" style="position:absolute;top: 0px; left: 0px; z-index: 1; opacity: 1; width: 100%">
+    {% else %}
+    <div class="center-y text-center">
+      {% endif %}
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div id="defaultCountdown" class="countdown-s1 s2"></div>
+            <div class="spacer-single"></div>
+            <h1 class="title-3">
+              {{ fields.title.content }}<br>{{ fields.field_ban_subtitulo.content }} <span class="id-color">{{ fields.field_ban_anio.content }}</span>
+            </h1>
+            <div class="title-3">
+              {{ fields.field_ban_subtitulo_rich.content }}
+            </div>
+            <div class="spacer-single"></div>
+            <div id="wrapper-info" class="d-lg-flex justify-content-center">
+              <div class="h6 padding10 pt0 pb0"><i class="i_h3 fa fa-calendar-check-o id-color"></i>{{ fields.field_ban_fecha.content }}</div>
+              {% if fields.field_ban_expositores.content %}
+                <div class="h6 padding10 pt0 pb0"><i class="i_h3 fa fa-user id-color"></i>{{ fields.field_ban_expositores.content }}</div>
+              {% endif %}
+              <div class="h6 padding10 pt0 pb0"><i class="i_h3 fa fa-map-marker id-color"></i>{{ fields.field_ban_ubicacion.content }}</div>
+            </div>
+            <div class="spacer-single"></div>
+            {% if fields.field_ban_inscripcion.content %}
+              {% set links = fields.field_ban_inscripcion.content|split(',') %}
+              {% set titles = fields.field_ban_inscripcion_1.content|split(',') %}
+              <div class="row">
+                {% for title in titles %}
+                  <div class="col-12 text-right mb-3">
+                    <a class="btn-custom text-white scroll-to" href="{{ links[loop.index0] }}" aria-label="{{ links[loop.index0] }}" target="_blank">{{ title }}</a>
+                  </div>
+                {% endfor %}
+              </div>
+            {% endif %}
+            <div class="spacer-double"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- banner section close -->

@@ -1,0 +1,33 @@
+
+<!-- Salidas section Start -->
+<section class="text-light" id="section-salidas" data-bgcolor="#101010">
+    <!-- Start Header -->
+    <div class="wm wm-border dark wow fadeInDown" id="departures-subt"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3 text-center wow fadeInUp">
+          <h2> Salidas de Campo</h2>
+          <div class="separator" style="background-size: cover;"><span><i class="fa fa-square"></i></span></div>
+          <div class="spacer-single" style="background-size: cover;"></div>
+        </div>
+        {% if header %}
+        <div class="col-md-12 wow fadeInUp text-center lead">
+          {{ header }}
+        </div>
+        {% endif %}
+      </div>
+    {% if rows -%}
+      <div class="row">
+      <div class="col-md-12 wow fadeInUp">
+        <div class="accordion" id="accordionDepartures">
+          {{ rows }}
+        </div>
+      </div>
+      </div>
+    {% elseif empty -%}
+      {{ empty }}
+    {% endif %}
+
+
+    </div>
+</section>

@@ -1,0 +1,42 @@
+<section id="section-certificacion" data-bgimage="" style="background: url('') center top / cover fixed;">
+  <div class="wm wm-border light wow fadeInDown sponsor-title">{{ fields.title.content }}</div>
+
+  <div class="container">
+    <div class="col-lg-12 text-center">
+      <h3>{{ fields.title.content }}</h3>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 offset-md-3 text-center wow fadeInUp">
+        <h1>{{ fields.field_cer_subtitulo.content }}</h1>
+        <div class="separator"><span><i class="fa fa-square"></i></span></div>
+        <div class="spacer-single"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 lead">
+        {{ fields.body.content }}
+      </div>
+    </div>
+
+
+
+    <div class="row justify-content-center align-items-center">
+      <div class="col-lg-6 lead">
+        {{ fields.field_cer_contenido.content }}
+
+        <div class="p-3 mb-2  text-dark" style="background-color: #f2cb02"><h1> {{ fields.field_cer_descripcion_valor.content }}</h1></div>
+
+      </div>
+      <div class="col-lg-6">
+        <img src="{{ fields.field_cer_imagen.content }}" title="" class="w-100">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 lead">
+        {{ fields.field_cer_descripcion_pie.content }}
+      </div>
+    </div>
+  </div>
+
+</section>

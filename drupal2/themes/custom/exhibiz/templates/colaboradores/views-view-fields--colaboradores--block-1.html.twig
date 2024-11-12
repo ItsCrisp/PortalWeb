@@ -1,0 +1,11 @@
+<div class="col-xl-3 col-lg-4 col-sm-6 mb30 wow fadeInUp animated items">
+  <div class="col align-self-center text-center">
+    {% if fields.field_col_enlace.content %}
+    <a href="{{ fields.field_col_enlace.content }}" target="_blank" rel="nofollow" title=" Ver sitio de {{ fields.title.content }}">
+      <img src="{{ fields.field_col_imagen.content }}" class="img-fluid" alt="{{ fields.title.content }}">
+    </a>
+    {% else %}
+      <img src="{{ fields.field_col_imagen.content }}" class="img-fluid" alt="{{ fields.title.content }}">
+    {% endif %}
+  </div>
+</div>

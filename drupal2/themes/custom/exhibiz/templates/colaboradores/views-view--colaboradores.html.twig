@@ -1,0 +1,22 @@
+
+<!-- Colaboradores section Start -->
+<section id="section-colaborators" >
+  <div class="wm wm-border light wow fadeInDown sponsor-title">{{ header }}</div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3 text-center wow fadeInUp">
+        <h1>{{ header }}</h1>
+        <div class="separator"><span><i class="fa fa-square"></i></span></div>
+        <div class="spacer-single"></div>
+      </div>
+    </div>
+    {% if rows -%}
+      <div class="row h-100 mt-2">
+        {{ rows }}
+      </div>
+    {% elseif empty -%}
+      {{ empty }}
+    {% endif %}
+    {{ pager }}
+  </div>
+</section>

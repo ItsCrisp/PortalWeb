@@ -1,0 +1,59 @@
+# fluffiness.libraries.yml
+global-styling-and-scripts:
+  version: VERSION
+  css:
+    theme:
+      assets/css/bootstrap.css: { }
+      assets/css/jpreloader.css: { }
+      assets/css/animate.css: { }
+      assets/css/plugin.css: { }
+      assets/css/magnific-popup.css: { }
+      assets/css/jquery.countdown.css: { }
+      assets/css/style.css: { }
+      assets/css/twentytwenty.css: { }
+      assets/css/colors/magenta.css: { }
+      assets/css/color.css: { }
+      assets/fonts/font-awesome/css/font-awesome.css: { }
+      assets/fonts/elegant_font/HTML_CSS/style.css: { }
+      assets/fonts/et-line-font/style.css: { }
+      assets/css/font-style.css: { }
+  dependencies:
+    - core/jquery
+  js:
+    assets/js/jquery-migrate-3.4.0.min.js: { }
+    assets/js/jpreLoader.js: { }
+    assets/js/bootstrap.min.js: { }
+    assets/js/jquery.isotope.min.js: { }
+    assets/js/easing.js: { }
+    assets/js/jquery.flexslider-min.js: { }
+    assets/js/jquery.scrollto.js: { }
+    assets/js/jquery.countTo.js: { }
+    assets/js/classie.js: { }
+    assets/js/video.resize.js: { }
+    assets/js/validation.js: { }
+    assets/js/wow.min.js: { }
+    assets/js/owl.carousel.js: { }
+    assets/js/jquery.magnific-popup.min.js: { }
+    assets/js/jquery.stellar.min.js: { }
+    assets/js/enquire.min.js: { }
+    assets/js/designesia.js: { }
+    assets/js/jquery.event.move.js: { }
+    assets/js/jquery.plugin.js: { }
+    assets/js/jquery.countdown.js: { }
+    assets/js/countdown-custom.js: { }
+    assets/js/particles.js: { }
+    assets/js/particles-settings.js: { }
+    assets/js/jquery.twentytwenty.js: { }
+    assets/js/twentytwenty.js: { }
+    assets/js/webform.js: { }
+
+
+magnify:
+  css:
+    theme:
+      assets/css/magnify.css: {}
+  js:
+    assets/js/jquery.magnify.js: {}
+    assets/js/jquery.magnify-mobile.js: {}
+    assets/js/magnify-run.js: {}
+    assets/js/translate.js: {}

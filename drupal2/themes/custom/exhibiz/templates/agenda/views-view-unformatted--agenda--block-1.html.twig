@@ -1,0 +1,46 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{#  Header #}
+<ul class="de_nav de_nav_dark">
+      {% for row in rows %}
+        {{- row.content -}}
+      {% endfor %}
+</ul>
+{# Details #}
+<div class="de_tab_content text-left">
+  {% set counter = 0 %}
+  {% set total = 0 %}
+{% for row in rows %}
+  {% set nid  = row.content['#row']._entity.nid.value|number_format %}
+  {% set total = counter + 1 %}
+  <div id="tab{{ total }}" class="row{{ nid }} tab_single_content">
+    {{ drupal_view('itemparrafo', 'block_1', nid ) }}
+  </div>
+  {% set counter = counter + 1 %}
+{% endfor %}
+</div>
+
+
+
+
+
+
+

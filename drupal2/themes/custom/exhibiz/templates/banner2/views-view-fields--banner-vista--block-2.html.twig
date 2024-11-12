@@ -1,0 +1,25 @@
+
+  <!-- team member -->
+  <div class="de-team-list">
+    <div class="team-pic">
+      <img src="{{ fields.field_image.content }}" class="img-responsive lazy-loading"/>
+    </div>
+    <div class="team-desc">
+      <h3>{{ fields.title.content }}</h3>
+      <p class="lead">{{ fields.title.content }}</p>
+      <div class="small-border"></div>
+        {% if fields.field_jun_enlace.content %}
+          &nbsp;<a href="{{ fields.field_jun_enlace.content }}" target="_blank" title="Ver más" class="read-more">Leer más</a>
+        {% endif %}
+
+      </p>
+      {#<div class="social">
+        <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
+        <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
+        <a href="#"><i class="fa fa-google-plus fa-lg"></i></a>
+        <a href="#"><i class="fa fa-skype fa-lg"></i></a>
+      </div>#}
+    </div>
+  </div>
+  <!-- team close -->
+

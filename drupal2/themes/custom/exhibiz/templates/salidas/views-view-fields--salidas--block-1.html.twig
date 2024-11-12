@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header" id="heading{{ fields.counter.content }}" >
+    <h2 class="mb-0">
+      <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse{{ fields.counter.content }}" aria-expanded="true" aria-controls="collapse{{ fields.counter.content }}">
+        {{ fields.title.content }} - <span class="depart-date">{{ fields.field_sal_fecha.content }}</span>
+      </button>
+    </h2>
+  </div>
+  <div id="collapse{{ fields.counter.content }}" class="collapse {% if fields.counter.content == "1" %}show{% endif %}" aria-labelledby="heading{{ fields.counter.content }}" data-parent="#accordionDepartures">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-lg-4">
+          <img src="{{ fields.field_sal_imagen.content }}" class="img-fluid">
+        </div>
+        <div class="col-lg-8 lead">
+          {{ fields.body.content }}
+          <p><strong>Responsable:</strong> {{ fields.field_sal_subtitulo.content }}</p>
+          <p><strong>Horario:</strong> {{ fields.field_sal_horario.content }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

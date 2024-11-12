@@ -1,0 +1,9 @@
+<div class="col nodo{{ fields.nid.content }} align-self-center text-center">
+  {% if fields.field_org_enlace.content %}
+  <a href="{{ fields.field_org_enlace.content }}" target="_blank" rel="nofollow" title="{{ fields.title.content }}">
+    <img src="{{ fields.field_org_imagen.content }}" class="img-fluid" alt="{{ fields.title.content }}">
+  </a>
+  {% else %}
+    <img src="{{ fields.field_org_imagen.content }}" class="img-fluid" alt="{{ fields.title.content }}">
+  {% endif %}
+</div>

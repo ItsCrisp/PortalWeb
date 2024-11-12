@@ -1,0 +1,34 @@
+<div class="col-md-12 wow fadeInUp text-center lead">
+  {{ fields.body.content }}
+</div>
+
+
+
+
+{#
+{% if fields.field_ins_enlace.content %}
+<div class="col-md-12 wow fadeInUp text-center">
+  <a href="{{ fields.field_ins_enlace.content }}" class="btn-custom text-white scroll-to" title="Inscripción" target="_blank">{{ fields.field_ins_enlace_1.content }}</a>
+</div>
+{% endif %}
+#}
+
+{% if fields.field_ins_enlace.content %}
+  {% set links = fields.field_ins_enlace.content|split(',') %}
+  {% set titles = fields.field_ins_enlace_1.content|split(',') %}
+
+
+
+  <div class="col-md-12 wow fadeInUp text-center">
+    <a href="{{ links['0'] }}" class="btn-custom text-white scroll-to" title="{{ titles['0'] }}" target="_blank">{{ titles['0'] }}</a>
+    {% for title in titles %}
+      {% if loop.index0 != '0' %}
+        <a href="{{ links[loop.index0] }}" class="btn-custom text-white scroll-to" title="{{ title }}" target="_blank">{{ title }}</a>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% else %}
+  <div class="col-md-12 wow fadeInUp">
+    {{ fields.field_ins_formulario.content }}
+  </div>
+{% endif %}

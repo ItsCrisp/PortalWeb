@@ -1,0 +1,94 @@
+{#
+
+/**
+ * @file
+ * Default theme implementation for main view template.
+ *
+ * Available variables:
+ * - attributes: Remaining HTML attributes for the element.
+ * - css_name: A css-safe version of the view name.
+ * - css_class: The user-specified classes names, if any.
+ * - header: The optional header.
+ * - footer: The optional footer.
+ * - rows: The results of the view query, if any.
+ * - empty: The content to display if there are no rows.
+ * - pager: The optional pager next/prev links to display.
+ * - exposed: Exposed widget form/info to display.
+ * - feed_icons: Optional feed icons to display.
+ * - more: An optional link to the next page of results.
+ * - title: Title of the view, only used when displaying in the admin preview.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the view title.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the view title.
+ * - attachment_before: An optional attachment view to be displayed before the
+ *   view content.
+ * - attachment_after: An optional attachment view to be displayed after the
+ *   view content.
+ * - dom_id: Unique id for every view being printed to give unique class for
+ *   Javascript.
+ *
+ * @see template_preprocess_views_view()
+ *
+ * @ingroup themeable
+ */
+#}
+<!-- Schedule section Start -->
+<!-- section begin -->
+<section id="section-schedule" aria-label="section-services-tab" data-bgimage="url(/themes/exhibiz/assets/images/bg/6.jpg) top right no-repeat" style="background: url('/themes/exhibiz/assets/images/bg/6.jpg') center top / cover fixed;">
+
+
+    {% set classes = [
+      dom_id ? 'js-view-dom-id-' ~ dom_id,
+    ] %}
+
+    {{ title_prefix }}
+    {{ title }}
+    {{ title_suffix }}
+
+    {% if header %}
+    <!-- Start Header -->
+    <div class="wm wm-border light wow fadeInDown" id="schedule-subt"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3 text-center wow fadeInUp">
+          <h1>{{ header }}</h1>
+          <div class="separator" style="background-size: cover;"><span><i class="fa fa-square"></i></span></div>
+          <div class="spacer-single" style="background-size: cover;"></div>
+        </div>
+
+    <!-- End Header -->
+  {% endif %}
+    {{ exposed }}
+    {{ attachment_before }}
+
+    {% if rows -%}
+    {#<div class="container" style="background-size: cover;">#}
+      <div class="col-md-12 wow fadeInUp">
+        <div class="de_tab tab_style_4 text-center">
+          {{ rows }}
+        </div>
+      </div>
+   {# </div>#}
+    {% elseif empty -%}
+      {{ empty }}
+    {% endif %}
+    {{ pager }}
+
+    {{ attachment_after }}
+    {{ more }}
+
+    {% if footer %}
+        <div class="row">
+          <div class="col-lg-12">
+        {{ footer }}
+          </div>
+        </div>
+    {% endif %}
+
+    {{ feed_icons }}
+
+    <!-- /.Features section end -->
+      </div>
+    </div>
+</section>

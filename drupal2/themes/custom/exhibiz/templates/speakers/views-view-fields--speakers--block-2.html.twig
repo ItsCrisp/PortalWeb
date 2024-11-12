@@ -1,0 +1,19 @@
+<!-- team member -->
+<div class="row">
+  <div class="col-lg-3">
+    <img src="{{ fields.field_exp_imagen.content }}" class="img-fluid rounded-circle" alt="{{ fields.title.content }}"/>
+    <div class="speaker-title-container mt-3"><h3 id="title-{{ fields.nid.content }}">{{ fields.title.content }}</h3>
+      <div class="lead">{{ fields.field_exp_cargo.content }}</div>
+    </div>
+  </div>
+  <div class="col-lg-9">
+    <div class="lead">{{ fields.body.content }}</div>
+    {% if fields.field_exp_curriculume.content %}
+    <div class="social">
+      <a href="{{ fields.field_exp_curriculum.content }}" target="_blank" title="{{ fields.title.content }}" rel="noreferrer"> Currículum <i class="fa fa-link fa-lg"></i></a>
+      <!--a href="#"><i class="fa fa-facebook fa-lg"></i></a><a href="#"><i class="fa fa-twitter fa-lg"></i></a><a href="#"><i class="fa fa-google-plus fa-lg"></i></a><a href="#"><i class="fa fa-skype fa-lg"></i></a-->
+    </div>
+    {% endif %}
+  </div>
+</div>
+<!-- team close -->

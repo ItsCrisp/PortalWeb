@@ -1,0 +1,28 @@
+
+  <!-- team member -->
+  <div class="de-team-list">
+    <div class="team-pic">
+      <img src="{{ fields.field_exp_imagen.content }}" class="img-responsive lazy-loading" alt="{{ fields.title.content }}"/>
+    </div>
+    <div class="team-desc">
+      <h3>{{ fields.title.content }}</h3>
+      <p class="lead">{{ fields.field_exp_cargo.content }}</p>
+      <div class="small-border"></div>
+      <p>{{ fields.body.content }}
+        {% if fields.field_exp_curriculum.content %}
+          &nbsp;<a href="{{ fields.field_exp_curriculum.content }}" target="_blank" title="Ver currícculum" class="read-more">Leer más</a>
+        {% endif %}
+        {% if fields.field_exp_linkedin.content %}
+          &nbsp;<a href="{{ fields.field_exp_linkedin.content }}" target="_blank" title="Ver más" rel="nofollow" class="read-more">Leer más</a>
+        {% endif %}
+      </p>
+      {#<div class="social">
+        <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
+        <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
+        <a href="#"><i class="fa fa-google-plus fa-lg"></i></a>
+        <a href="#"><i class="fa fa-skype fa-lg"></i></a>
+      </div>#}
+    </div>
+  </div>
+  <!-- team close -->
+
